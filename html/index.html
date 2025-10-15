@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Connect</title>
+    <style>
+        body {
+            background-image: url('b1.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+        }
+        
+        .content {
+            text-align: center;
+            color: #fff;
+            font-size: 3em;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+        }
+        
+        .navbar {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        
+        .navbar a {
+            margin-left: 10px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: bold;
+            transition: transform 0.3s; /* Added transition */
+            display: inline-block;
+        }
+        
+        .navbar a:hover {
+            transform: scale(1.1); /* Added hover effect */
+        }
+        
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            margin-top: 80vh;
+            border-radius: 8px;
+        }
+        
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin: 20px;
+            padding: 20px;
+            max-width: 300px;
+            text-align: center;
+            visibility: hidden; /* Initially hidden */
+            flex: 0 0 calc(33.33% - 40px); /* Adjust the width for three cards in a row */
+            transition: transform 0.5s;
+            background: #fff;
+        }
+        
+        .card:hover {
+            transform: scale(1.05) rotate(3deg);
+        }
+        
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .card a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="log_in.php">Login</a>
+        <a href="reg.html">Register</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+    </div>
+    <div class="content">
+        <h1>Welcome to Club Connect</h1>
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <a href="swecha.html">
+                <img src="swecha.jpg" alt="Swecha">
+                <h2>Swecha</h2>
+            </a>
+        </div>
+        <div class="card">
+            <a href="gdsc.html">
+                <img src="gdsc.jpg" alt="GDSC">
+                <h2>GDSC</h2>
+            </a>
+        </div>
+        <div class="card">
+            <a href="fyfp.html">
+                <img src="fyfp.jpg" alt="FYFP">
+                <h2>FYFP</h2>
+            </a>
+        </div>
+        <div class="card">
+            <a href="iic.html">
+                <img src="iic.png" alt="IIC">
+                <h2>IIC</h2>
+            </a>
+        </div>
+        <div class="card">
+            <a href="arts.html">
+                <img src="arts.jpg" alt="Arts and Culture">
+                <h2>Arts and Culture</h2>
+            </a>
+        </div>
+        <div class="card">
+            <a href="nss.html">
+                <img src="nss.jpg" alt="NSS">
+                <h2>NSS</h2>
+            </a>
+        </div>
+        <div class="card">
+            <a href="ncc.html">
+                <img src="ncc.jpg" alt="NCC">
+                <h2>NCC</h2>
+            </a>
+        </div>
+        <div class="card">
+            <a href="dance.html">
+                <img src="dance.jpg" alt="Dance Club">
+                <h2>Dance Club</h2>
+            </a>
+        </div>
+        <div class="card">
+            <a href="sports.html">
+                <img src="sports.jpg" alt="Sports Club">
+                <h2>Sports Club</h2>
+            </a>
+        </div>
+        <div class="card">
+            <a href="literary.html">
+                <img src="literary.jpg" alt="Literary Club">
+                <h2>Literary Club</h2>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            if (window.scrollY + window.innerHeight >= document.body.scrollHeight) {
+                // User has scrolled to the bottom
+                // Show the cards
+                document.querySelectorAll('.card').forEach(function (card) {
+                    card.style.visibility = 'visible';
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swecha Club</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f8f8;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .welcome-message,
+        .club-info {
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .welcome-message {
+            font-size: 52px;
+            color: #ff0000;
+            margin-bottom: 20px;
+        }
+
+        .club-info {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .club-image {
+            max-width: 70%; /* Adjusted image size */
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #ff9900;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #007BFF; /* Different color for side headings */
+            margin-bottom: 5px;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.6;
+            text-align: left;
+            max-width: 600px;
+            margin-bottom: 12px;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            padding-left: 12px;
+        }
+
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s, transform 1s;
+        }
+
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="welcome-message">
+        <h1>Welcome to Swecha Club</h1>
+    </div>
+    <div class="club-info">
+        <img class="club-image" src="swecha.jpg" alt="Club 1">
+        <div class="section">
+            <h2>Freedom Fest</h2>
+            <p>MVGR is celebrating 10 years of the SWECHA LEARNING CENTRE by conducting a 3-day FREEDOM FEST with the motto of celebrating the art of learning, exploring, and sharing software knowledge.</p>
+        </div>
+        <div class="section">
+            <h2>Workshops</h2>
+            <p>The 3-day fest comprises workshops on Linux administration, Android development, Botpress, Arduino for IoT, Websites with WordPress, and PHP for WordPress.</p>
+        </div>
+        <div class="section">
+            <h2>Chief Guest</h2>
+            <p>Mr. Sai Kiran, Software Developer at Cap Gemini, has been invited as the chief guest for the inaugural function of the 3-day Freedom Fest.</p>
+        </div>
+        <div class="section">
+            <h2>Addressing Students</h2>
+            <p>Mr. Sai Kiran, chief guest of the function, addressed the students about the importance of the syllabus of the freedom fest and conveyed his best wishes to all the participants.</p>
+        </div>
+        <div class="section">
+            <h2>Emphasis on Productivity</h2>
+            <p>Dr. Y.M.C. Sekhar, Vice Principal at MVGR, emphasized that this is not just a platform to read something and go, but a place where youngsters become productive by working with teams and exploring themselves.</p>
+        </div>
+        <div class="section">
+            <h2>Importance of Learning Centers</h2>
+            <p>Mr. M. Mohan Kumar, Dean-Students, addressed the student participants and emphasized the importance of learning centers in engineering colleges like SWECHA. He highlighted how through such software fests, students can gain valuable experience by using open source software and engaging in discussions with fellow students.</p>
+        </div>
+        <div class="section">
+            <h2>Freedom of Technology</h2>
+            <p>Mr. M. Vamsi Krishna, Convenor at MVGR SLC, highlighted that SWECHA AP is a place where you can find yourselves by experiencing the freedom of technology through experimentation. He also introduced some of the combined initiatives by SWECHA AP and MVGR SWECHA LEARNING CENTER like BALA SWECHA, FREEDOM BOX, and MVGR MOODLE.</p>
+        </div>
+        <div class="section">
+            <h2>Contemporary Issues</h2>
+            <p>Mr. G. Phanindra, Student Event Coordinator, discussed contemporary issues regarding software and how they learned using open sources.</p>
+        </div>
+        <div class="section">
+            <h2>Inaugural Event</h2>
+            <p>For the inaugural event, Dr. Y.M.C. Sekhar (Vice-principal), Mr. S. Mohan Kumar (Dean-Students), Dr. G. Suvarna Kumar (Associate Professor, CSE), Mr. M. Vamsi Krishna (Convener, MVGR SLC), and G. Phanindra (Event Coordinator), along with other faculty members and student participants from nearby colleges, were present.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let sections = document.querySelectorAll('.section');
+
+            function isInViewport(element) {
+                let rect = element.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+
+            function addVisibleClass() {
+                sections.forEach(section => {
+                    if (isInViewport(section)) {
+                        section.classList.add('visible');
+                    }
+                });
+            }
+
+            document.addEventListener('scroll', addVisibleClass);
+            document.addEventListener('resize', addVisibleClass);
+
+            addVisibleClass(); // Add visible class to elements initially in view
+        });
+    </script>
+</body>
+
+</html>

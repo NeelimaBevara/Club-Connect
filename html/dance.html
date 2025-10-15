@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dance Club</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f8f8;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .welcome-message,
+        .club-info {
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .welcome-message {
+            font-size: 52px;
+            color: #ff0000;
+            margin-bottom: 20px;
+        }
+
+        .club-info {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .club-image {
+            max-width: 70%; /* Adjusted image size */
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #ff9900;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #007BFF; /* Different color for side headings */
+            margin-bottom: 5px;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.6;
+            text-align: left;
+            max-width: 600px;
+            margin-bottom: 12px;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            padding-left: 12px;
+        }
+
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s, transform 1s;
+        }
+
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="welcome-message">
+        <h1>Welcome to Dance Club</h1>
+    </div>
+    <div class="club-info">
+        <img class="club-image" src="dance.jpg" alt="Club 8">
+        <div class="section">
+            <h2>Dance Club</h2>
+            <p>The MVGR College of Engineering Dance Club is a dynamic community dedicated to the art of dance. Our club is committed to providing a platform for students who share a passion for movement, rhythm, and self-expression through dance.</p>
+        </div>
+        <div class="section">
+            <h2>Diverse Dance Styles</h2>
+            <p>We explore a wide range of dance styles including contemporary, hip-hop, classical, folk, and more. This diversity allows our members to experience and appreciate various forms of dance.</p>
+        </div>
+        <div class="section">
+            <h2>Skill Development</h2>
+            <p>We provide regular practice sessions, workshops, and classes to help our members develop their dance skills. Our experienced instructors offer valuable guidance and feedback to support your growth as a dancer.</p>
+        </div>
+        <div class="section">
+            <h2>Choreography and Performances</h2>
+            <p>We work on choreographed routines, encouraging teamwork and creative collaboration. Our members have opportunities to showcase their talents at various college events and competitions.</p>
+        </div>
+        <div class="section">
+            <h2>Social Events and Networking</h2>
+            <p>In addition to dance practice, we organize social events, gatherings, and performances. These occasions provide opportunities for members to connect, share experiences, and build lasting friendships with fellow dancers.</p>
+        </div>
+        <div class="section">
+            <h2>Showcases and Competitions</h2>
+            <p>Our club participates in showcases within the college and potentially in larger competitions. These events allow members to demonstrate their skills and receive recognition for their hard work and dedication.</p>
+        </div>
+        <div class="section">
+            <h2>Inclusivity and Support</h2>
+            <p>We welcome individuals of all backgrounds, ages, and skill levels. Our club is an inclusive space where members encourage each other's growth and celebrate achievements.</p>
+        </div>
+        <div class="section">
+            <h2>Physical Fitness and Well-being</h2>
+            <p>Dancing is a fantastic way to stay physically active and maintain overall well-being. As a member, you'll benefit from regular movement and exercise, contributing to a healthy lifestyle.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let sections = document.querySelectorAll('.section');
+
+            function isInViewport(element) {
+                let rect = element.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+
+            function addVisibleClass() {
+                sections.forEach(section => {
+                    if (isInViewport(section)) {
+                        section.classList.add('visible');
+                    }
+                });
+            }
+
+            document.addEventListener('scroll', addVisibleClass);
+            document.addEventListener('resize', addVisibleClass);
+
+            addVisibleClass(); // Add visible class to elements initially in view
+        });
+    </script>
+</body>
+
+</html>

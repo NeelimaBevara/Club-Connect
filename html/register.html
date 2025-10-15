@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - College Club Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .registration-form {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 60%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff0000; /* Red color for the title */
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 3px;
+            font-size: 10px;
+            color: #007BFF;
+            width: 150px; /* Adjusted width for labels */
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"],
+        select,
+        input[type="date"] {
+            width: calc(100% - 160px); /* Adjusted width for input fields */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            background-color: #f9f9f9;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="registration-form">
+        <h1>Registration Form</h1>
+        <form action="register.php"method="post">
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="student-id">Student ID:</label>
+                <input type="text" id="student-id" name="student-id" required>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile No.:</label>
+                <input type="tel" id="mobile" name="mobile" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="branch">Branch:</label>
+                <select id="branch" name="branch" required>
+                    <option value="CSE">Computer Science Engineering (CSE)</option>
+                    <option value="IT">Information Technology (IT)</option>
+                    <option value="ECE">Electronics and Communication Engineering (ECE)</option>
+                    <option value="EEE">Electrical and Electronics Engineering (EEE)</option>
+                    <option value="MECH">Mechanical Engineering (MECH)</option>
+                    <option value="CSIT">Computer Science and Information Technology (CSIT)</option>
+                    <option value="IOT">Internet of Things (IOT)</option>
+                    <option value="DataScience">Data Science</option>
+                    <option value="AIML">Artificial Intelligence and Machine Learning (AIML)</option>
+                    <option value="CIVIL">Civil Engineering (CIVIL)</option>
+                    <option value="CHEM">Chemical Engineering (CHEM)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="year">Academic Year:</label>
+                <select id="year" name="year" required>
+                    <option value="2020-2024">2020-2024</option>
+                    <option value="2021-2025">2021-2025</option>
+                    <option value="2022-2026">2022-2026</option>
+                    <option value="2023-2027">2023-2027</option>
+                    <option value="2024-2028">2024-2028</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Choose Clubs to Join:</label>
+                <input type="checkbox" id="swecha" name="clubs[]" value="Swecha"> Swecha<br>
+                <input type="checkbox" id="fyfp" name="clubs[]" value="FYFP"> FYFP<br>
+                <input type="checkbox" id="iic" name="clubs[]" value="IIC"> IIC<br>
+                <input type="checkbox" id="arts-culture" name="clubs[]" value="Arts and Culture"> Arts and Culture<br>
+                <input type="checkbox" id="nss" name="clubs[]" value="NSS"> NSS<br>
+                <input type="checkbox" id="ncc" name="clubs[]" value="NCC"> NCC<br>
+                <input type="checkbox" id="literary-club" name="clubs[]" value="Literary Club"> Literary Club<br>
+                <input type="checkbox" id="sports-club" name="clubs[]" value="Sports Club"> Sports Club<br>
+                <input type="checkbox" id="dance-club" name="clubs[]" value="Dance Club"> Dance Club<br>
+                <input type="checkbox" id="gdsc" name="clubs[]" value="GDSC"> GDSC<br>
+            </div>
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</body>
+</html>
